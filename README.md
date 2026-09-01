@@ -10,7 +10,7 @@ Large language models are increasingly used to answer medical questions, but the
 
 [MedHallu](https://huggingface.co/datasets/UTAustin-AIHealth/MedHallu) — a public, MIT-licensed benchmark of 10,000 medical question-answer pairs built on top of PubMedQA, developed by UT Austin's AI Health group. Each row contains a question, the real source context, a correct ("Ground Truth") answer, and a fabricated ("Hallucinated") answer, labeled by difficulty and hallucination category.
 
-For this project, 200 samples were randomly selected (seed=42, reproducible) from the labeled subset.
+All 1,000 labeled samples were used, with a fixed random assignment (seed=42, reproducible) of which answer (real or hallucinated) was shown for each question, held constant across both conditions for a fair paired comparison.
 
 ## Method
 
@@ -58,4 +58,4 @@ Python, Hugging Face Transformers & Datasets, pandas, statsmodels (McNemar's tes
 
 ## Author
 
-Vignesh — undergraduate CS student, built as part of independent research
+Vignesh — undergraduate CS student, built as part of independent research toward a Master's application in Data Science / Computer Science.
