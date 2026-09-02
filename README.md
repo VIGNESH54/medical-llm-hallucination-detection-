@@ -58,4 +58,5 @@ Python, Hugging Face Transformers & Datasets, pandas, statsmodels (McNemar's tes
 
 ## Author
 
-Vignesh — undergraduate CS student, built as part of independent research toward a Master's application in Data Science / Computer Science.
+Vignesh — undergraduate CS student, built as part of independent research.
+
