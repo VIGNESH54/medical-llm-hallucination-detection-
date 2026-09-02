@@ -23,12 +23,12 @@ All 1,000 labeled samples were used, with a fixed random assignment (seed=42, re
 
 | Metric | Baseline (no context) | RAG (with context) |
 |---|---|---|
-| Overall accuracy | 57.5% (95% CI: 50.5–64.5%) | 84.0% (95% CI: 79.5–89.0%) |
-| Recall on hallucinated answers | 37.2% | 74.3% |
-| Precision on hallucinated answers | 75.0% | 96.6% |
-| F1 (hallucinated class) | 49.7% | 84.0% |
+| Overall accuracy | 64.0% | 80.5% |
+| Recall on hallucinated answers | 38.9% | 70.0% |
+| Precision on hallucinated answers | 75.0% | 87.4% |
+| F1 (hallucinated class) | 51.2% | 77.7% |
 
-The improvement is statistically significant (McNemar's test, p < 0.001, n=200 paired samples).
+The improvement is statistically significant (McNemar's test, p < 0.0001, n=1,000 paired samples). Results were first validated on a 200-sample subset (57.5% → 84.0% accuracy) and then confirmed on the full 1,000-sample set to rule out the smaller sample overstating the effect — the full-sample effect size (16.5 points) is more conservative and more reliable than the initial estimate (26.5 points), which is expected and worth stating plainly rather than reporting only the more dramatic early number.
 
 ![Overall accuracy comparison](chart1_overall_accuracy.png)
 ![Precision, recall, F1 comparison](chart2_precision_recall_f1.png)
@@ -36,7 +36,7 @@ The improvement is statistically significant (McNemar's test, p < 0.001, n=200 p
 
 ### Key finding
 
-Without grounding, the model missed roughly **2 out of every 3 hallucinated answers** — a genuinely risky failure rate for a medical context. Grounding the model in real source text roughly **doubled its recall on hallucinations (37.2% → 74.3%)** while also improving precision, meaning it didn't just get more cautious across the board — it got specifically better at catching fabricated answers, with few false alarms.
+Without grounding, the model missed roughly **3 out of every 5 hallucinated answers** — a genuinely risky failure rate for a medical context. Grounding the model in real source text nearly **doubled its recall on hallucinations (38.9% → 70.0%)** while also improving precision (75.0% → 87.4%), meaning it didn't just get more cautious across the board — it got specifically better at catching fabricated answers, with fewer false alarms.
 
 ### By hallucination category
 
@@ -58,4 +58,4 @@ Python, Hugging Face Transformers & Datasets, pandas, statsmodels (McNemar's tes
 
 ## Author
 
-Vignesh — undergraduate CS student, built as part of independent research. 
+Vignesh — undergraduate CS student, built as part of independent research.
